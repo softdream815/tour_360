@@ -51,7 +51,7 @@
 
                 </p>
                 <!-- Button -->
-                <a href="#" class="btn btn-primary">Button</a>
+                <a href="#" class="btn btn-primary">Explore</a>
 
             </div>
 
@@ -83,7 +83,7 @@
                 <!-- Text -->
                 <p class="card-text">Click on the below button for details.</p>
                 <!-- Button -->
-                <a href="#" class="btn btn-primary">Button</a>
+                <a href="#" class="btn btn-primary">Explore</a>
 
             </div>
 
@@ -111,7 +111,7 @@
                     <!-- Text -->
                     <p class="card-text">Click on the below button for details</p>
                     <!-- Button -->
-                    <a href="#" class="btn btn-primary">Button</a>
+                    <a href="#" class="btn btn-primary">Explore</a>
     
                 </div>
     

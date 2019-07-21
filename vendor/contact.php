@@ -24,7 +24,7 @@
                                         <div class="col-md-12">
     
                                             <div class="office">
-                                                <h4>United States</h4>
+                                                <h4>Nepal</h4>
                                                 <ul class="office-details">
                                                     <li><i class="fa fa-mobile"></i><span>+(977) 9865022541</span></li><br>
                                                     <li><i class="fa fa-envelope"></i><span>support@tour360.com</span></li><br>
@@ -87,7 +87,7 @@
                                     </div>
     
                                     <div id="submit-btn">
-                                        <a class="btn btn-general btn-yellow" href="#" title="Submit" role="button">Submit</a>
+                                        <a class="btn btn-general btn-info" href="#" title="Submit" role="button">Submit</a>
                                     </div>
     
                                 </form>

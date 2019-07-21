@@ -1,10 +1,14 @@
+<?php 
+session_start();
+include '../dbConfig.php';
+ ?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> Mt Everest</title>
+    <title> Profile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -72,7 +76,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="../../index.html">Home</a>
+                    <a class="nav-link" href="../../index.php">Home</a>
                 </li>
 
                 <li class="nav-item active">
@@ -134,16 +138,10 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
+    <?php 
+        if (isset($_SESSION['login'])) {
+            if ($_SESSION['mode']=='user') {
+     ?>
 
     <section id="profile-information" class="shadow-lg p-3 mx-5 rounded">
         <div class="container">
@@ -151,9 +149,8 @@
                 <div class="col-lg-8 order-lg-2">
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
-                            <a href="" data-target="#profile" data-toggle="tab" class="nav-link active">Profile</a>
+                            <a href="" data-target="#profile" data-toggle="tab" class="nav-link active">Information</a>
                         </li>
-
                         <li class="nav-item">
                             <a href="" data-target="#info" data-toggle="tab" class="nav-link">Requirements</a>
                         </li>
@@ -173,8 +170,6 @@
 
                     </ul>
                     <div class="tab-content py-4">
-
-
                         <div class="tab-pane active" id="profile">
                             <h3 class="mb-3 text-muted">Mt. Everest</h3>
                             <hr>
@@ -285,7 +280,8 @@
                                     </div>
                                 </div>
                             </div>
-                    
+
+
 
                         <!---NEW TABS-->
 
@@ -440,40 +436,25 @@
                         </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         <!---NEW TABS-->
+                        
 
                         <div class="tab-pane" id="hotels">
+                            <?php 
+                            $sql="select * from hotel";
+                            $result=mysqli_query($conn,$sql);
+                            $count=0;
+                            foreach ($result as $key => $value) 
+                            {
+                                $count++;
+
+                         ?>
                             <div class="block mb-5">
                                 <div class="row">
                                     <div class="span4">
                                         <img class="img-left aeroplane" src="../../img/profile/hotels/hotel-01.jpg" />
                                         <div class="content-heading">
-                                            <h3>Top Valley Restort </h3>
+                                            <h3><?php echo $value['name']; ?></h3>
                                             <hr>
                                         </div>
                                         <p>Donec id elit non mi porta gravida at eget metus. Etiam porta sem malesuada
@@ -483,144 +464,108 @@
                                             magna mollis euismod. Donec sed odio dui.</p>
 
 
-                                        <a href="" class="btn btn-dark" data-toggle="modal"
-                                            data-target="#bookHotel">Book Now</a>
+                                        <a href=""  class="btn btn-dark" data-toggle="modal"
+                                            data-target="#bookHotel<?php echo $count;?>">Book Now</a>
 
+                                        <?php 
+                                                if($count==1){
+                                             ?>
                                         <i class="fas fa-check-circle text-success"></i> <span
                                             class="text-success">Available</span>
+                                            <?php 
+                                            }
+                                            else{
+                                             ?>
+                                         <i class="fas fa-check-circle text-danger"></i> <span
+                                            class="text-danger">Unavailable</span>
+                                            <?php } ?>   
                                     </div>
                                 </div>
                             </div>
 
                             <hr>
+                            <?php 
+                                }
+                             ?>
+                             <?php 
+                             $count=0;
+                            foreach ($result as $key => $value) 
+                            {
+                                
+                                $count++;
+                                    
+                                
 
-                            <div class="block mb-5">
-                                <div class="row">
-                                    <div class="span4">
-                                            <img class="img-left aeroplane" src="../../img/profile/hotels/hotel-03.jpg" />
-                                        <div class="content-heading">
-                                            <h3>Dream Land Gold Resort </h3>
-                                            <hr>
-                                        </div>
-                                        <p>Donec id elit non mi porta gravida at eget metus. Etiam porta sem malesuada
-                                            magna mollis euismod. Donec sed odio dui.</p>
-
-                                        <p>Donec id elit non mi porta gravida at eget metus. Etiam porta sem malesuada
-                                            magna mollis euismod. Donec sed odio dui.</p>
-
-
-
-                                        <a href="" class="btn btn-light" data-toggle="modal"
-                                            data-target="#bookHotel">Book Now</a>
-
-                                        <i class="fas fa-check-circle text-danger"></i> <span
-                                            class="text-danger">Booked</span>
-
-                                    </div>
-
-
-
-
-                                </div>
-                            </div>
-
-
-                            <hr>
-
-
-                            <div class="block mb-5">
-                                <div class="row">
-                                    <div class="span4">
-                                            <img class="img-left aeroplane" src="../../img/profile/hotels/hotel-02.jpg" />
-                                        <div class="content-heading">
-                                            <h3>Park Safari Resort </h3>
-                                            <hr>
-                                        </div>
-                                        <p>Donec id elit non mi porta gravida at eget metus. Etiam porta sem malesuada
-                                            magna mollis euismod. Donec sed odio dui.</p>
-
-                                        <p>Donec id elit non mi porta gravida at eget metus. Etiam porta sem malesuada
-                                            magna mollis euismod. Donec sed odio dui.</p>
-
-                                        <a href="" class="btn btn-light" data-toggle="modal" data-target="#hotel">Book
-                                            Now</a>
-
-                                        <i class="fas fa-check-circle text-danger"></i> <span
-                                            class="text-danger">Booked</span>
-
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
+                            ?>
                             <!--FORM MODAL-->
-                            <div class="modal fade" id="bookHotel" tabindex="-1" role="dialog"
-                                aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
+                            <form action="book.php" method="post">
+                                <div class="modal fade" id="bookHotel<?php echo $count;?>" tabindex="-1" role="dialog"
+                                    aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
 
 
-                                        <div class="modal-header text-center">
-                                            <h4 class="modal-title w-100 font-weight-bold">Book Hotel</h4>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-
-
-                                        <div class="modal-body mx-3">
-                                            <div class="md-form mb-5">
-                                                <i class="fas fa-user prefix grey-text"></i>
-                                                <input type="text" id="orangeForm-name" class="form-control validate">
-                                                <label data-error="wrong" data-success="right"
-                                                    for="orangeForm-name">Your name</label>
+                                            <div class="modal-header text-center">
+                                                <h4 class="modal-title w-100 font-weight-bold">Book Hotel</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
                                             </div>
 
 
-                                            <div class="md-form mb-5">
-                                                <i class="fas fa-envelope prefix grey-text"></i>
-                                                <input type="email" id="orangeForm-email" class="form-control validate">
-                                                <label data-error="wrong" data-success="right"
-                                                    for="orangeForm-email">Your email</label>
+                                            <div class="modal-body mx-3">
+                                                <div class="md-form mb-5">
+                                                    <i class="fas fa-user prefix grey-text"></i>
+                                                    <input type="text" id="orangeForm-name" class="form-control validate">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="orangeForm-name">Your name</label>
+                                                </div>
+
+
+                                                <div class="md-form mb-5">
+                                                    <i class="fas fa-envelope prefix grey-text"></i>
+                                                    <input type="email" id="orangeForm-email" class="form-control validate">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="orangeForm-email">Your email</label>
+                                                </div>
+
+                                                <div class="md-form mb-4">
+                                                    <i class="fas fa-phone prefix grey-text"></i>
+                                                    <input type="number" id="orangeForm-pass" class="form-control validate">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="orangeForm-pass">Your phone no.</label>
+                                                </div>
+
+
+
+                                                <div class="md-form mb-5">
+                                                    <i class="fas fa-people-carry prefix grey-text"></i>
+                                                    <input type="number" id="orangeForm-name" class="form-control validate">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="orangeForm-name">Number of People</label>
+                                                </div>
+
+
+
+                                            </div>
+                                            <input type="hidden" name="<?php echo $value['name']; ?>" value=<?php echo $value['id']; ?>>
+                                            <div class="modal-footer d-flex justify-content-center">
+                                                <button type="submit" name="submit1" value="submit" class="btn btn-deep-orange">Book Now</button>
                                             </div>
 
-                                            <div class="md-form mb-4">
-                                                <i class="fas fa-phone prefix grey-text"></i>
-                                                <input type="number" id="orangeForm-pass" class="form-control validate">
-                                                <label data-error="wrong" data-success="right"
-                                                    for="orangeForm-pass">Your phone no.</label>
-                                            </div>
-
-
-
-                                            <div class="md-form mb-5">
-                                                <i class="fas fa-people-carry prefix grey-text"></i>
-                                                <input type="number" id="orangeForm-name" class="form-control validate">
-                                                <label data-error="wrong" data-success="right"
-                                                    for="orangeForm-name">Number of People</label>
-                                            </div>
-
-
-
-                                        </div>
-
-                                        <div class="modal-footer d-flex justify-content-center">
-                                            <button class="btn btn-deep-orange">Book Now</button>
                                         </div>
 
                                     </div>
-
                                 </div>
-                            </div>
-
+                            </form>
+                            <?php 
+                                }
+                          
+                        ?>
                         </div>
 
 
+                        
 
 
 
@@ -631,14 +576,22 @@
 
 
                         <!---NEW TABS-->
-
+                        
                         <div class="tab-pane" id="guides">
+                            <?php 
+                            $sql="select * from guide";
+                            $result=mysqli_query($conn,$sql);
+                            $count=0;
+                            foreach ($result as $key => $value) {
+                                $count++;
+
+                         ?>
                             <div class="block mb-5">
                                 <div class="row">
                                     <div class="span4">
                                         <img class="aeroplane img-left" src="../../img/profile/guide/person1.jpg" />
                                         <div class="content-heading">
-                                            <h3>Prajwol Tiwari </h3>
+                                            <h3><?php echo $value['name']; ?> </h3>
                                             <hr>
                                         </div>
                                         <p>Donec id elit non mi porta gravida at eget metus. Etiam porta sem malesuada
@@ -649,175 +602,99 @@
 
 
                                         <a href="" class="btn btn-dark" data-toggle="modal"
-                                            data-target="#bookGuide">Book Now</a>
-
+                                            data-target="#bookGuide<?php echo $count;?>">Book Now</a>
+                                            <?php 
+                                                if($count==1){
+                                             ?>
                                         <i class="fas fa-check-circle text-success"></i> <span
                                             class="text-success">Available</span>
+                                            <?php 
+                                            }
+                                            else{
+                                             ?>
+                                         <i class="fas fa-check-circle text-danger"></i> <span
+                                            class="text-danger">Unavailable</span>
+                                            <?php } ?>   
                                     </div>
                                 </div>
                             </div>
 
                             <hr>
+                           <?php } ?>
 
-                            <div class="block mb-5">
-                                <div class="row">
-                                    <div class="span4">
-                                        <img class="aeroplane img-left" src="../../img/profile/guide/person2.jpg" />
-                                        <div class="content-heading">
-                                            <h3>Pemba Sherpa</h3>
-                                            <hr>
-                                        </div>
-                                        <p>Donec id elit non mi porta gravida at eget metus. Etiam porta sem malesuada
-                                            magna mollis euismod. Donec sed odio dui.</p>
+                           <?php 
+                            $count=0;
+                            foreach ($result as $key => $value) {
+                                $count++;
 
-                                        <p>Donec id elit non mi porta gravida at eget metus. Etiam porta sem malesuada
-                                            magna mollis euismod. Donec sed odio dui.</p>
-
-
-
-                                        <a href="" class="btn btn-light" data-toggle="modal"
-                                            data-target="#flightBook">Book Now</a>
-
-                                        <i class="fas fa-check-circle text-danger"></i> <span
-                                            class="text-danger">Unavailable</span>
-
-                                    </div>
-
-
-
-
-                                </div>
-                            </div>
-
-
-                            <hr>
-
-
-                            <div class="block mb-5">
-                                <div class="row">
-                                    <div class="span4">
-                                        <img class="aeroplane img-left" src="../../img/profile/guide/person3.jpg" />
-                                        <div class="content-heading">
-                                            <h3>Suparth Ghimire</h3>
-                                            <hr>
-                                        </div>
-                                        <p>Donec id elit non mi porta gravida at eget metus. Etiam porta sem malesuada
-                                            magna mollis euismod. Donec sed odio dui.</p>
-
-                                        <p>Donec id elit non mi porta gravida at eget metus. Etiam porta sem malesuada
-                                            magna mollis euismod. Donec sed odio dui.</p>
-
-                                        <a href="" class="btn btn-light" data-toggle="modal"
-                                            data-target="#bookGuide">Book Now</a>
-
-                                        <i class="fas fa-check-circle text-danger"></i> <span
-                                            class="text-danger">Unavailable</span>
-
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="block mb-5">
-                                <div class="row">
-                                    <div class="span4">
-                                        <img class="aeroplane img-left" src="../../img/profile/guide/person4.jpg" />
-                                        <div class="content-heading">
-                                            <h3>Aadarsha Acharya</h3>
-                                            <hr>
-                                        </div>
-                                        <p>Donec id elit non mi porta gravida at eget metus. Etiam porta sem malesuada
-                                            magna mollis euismod. Donec sed odio dui.</p>
-
-                                        <p>Donec id elit non mi porta gravida at eget metus. Etiam porta sem malesuada
-                                            magna mollis euismod. Donec sed odio dui.</p>
-
-                                        <a href="" class="btn btn-light" data-toggle="modal"
-                                            data-target="#bookGuide">Book Now</a>
-
-                                        <i class="fas fa-check-circle text-danger"></i> <span
-                                            class="text-danger">Unavailable</span>
-
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
+                         ?>
 
 
                             <!--FORM MODAL-->
-                            <div class="modal fade" id="bookGuide" tabindex="-1" role="dialog"
-                                aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
+                            <form action="book1.php" method="post">
+                                <div class="modal fade" id="bookGuide<?php echo $count;?>" tabindex="-1" role="dialog"
+                                    aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
 
 
-                                        <div class="modal-header text-center">
-                                            <h4 class="modal-title w-100 font-weight-bold">Book Guide</h4>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-
-
-                                        <div class="modal-body mx-3">
-                                            <div class="md-form mb-5">
-                                                <i class="fas fa-user prefix grey-text"></i>
-                                                <input type="text" id="orangeForm-name" class="form-control validate">
-                                                <label data-error="wrong" data-success="right"
-                                                    for="orangeForm-name">Your name</label>
+                                            <div class="modal-header text-center">
+                                                <h4 class="modal-title w-100 font-weight-bold">Book Guide</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
                                             </div>
 
 
-                                            <div class="md-form mb-5">
-                                                <i class="fas fa-envelope prefix grey-text"></i>
-                                                <input type="email" id="orangeForm-email" class="form-control validate">
-                                                <label data-error="wrong" data-success="right"
-                                                    for="orangeForm-email">Your email</label>
+                                            <div class="modal-body mx-3">
+                                                <div class="md-form mb-5">
+                                                    <i class="fas fa-user prefix grey-text"></i>
+                                                    <input type="text" id="orangeForm-name" class="form-control validate">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="orangeForm-name">Your name</label>
+                                                </div>
+
+
+                                                <div class="md-form mb-5">
+                                                    <i class="fas fa-envelope prefix grey-text"></i>
+                                                    <input type="email" id="orangeForm-email" class="form-control validate">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="orangeForm-email">Your email</label>
+                                                </div>
+
+                                                <div class="md-form mb-4">
+                                                    <i class="fas fa-phone prefix grey-text"></i>
+                                                    <input type="number" id="orangeForm-pass" class="form-control validate">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="orangeForm-pass">Your phone no.</label>
+                                                </div>
+
+
+
+                                                <div class="md-form mb-5">
+                                                    <i class="fas fa-people-carry prefix grey-text"></i>
+                                                    <input type="number" id="orangeForm-name" class="form-control validate">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="orangeForm-name">Number of People</label>
+                                                </div>
+
+
+
+                                            </div>
+                                            <input type="hidden" name="<?php echo $value['name']; ?>" value=<?php echo $value['id']; ?>>
+                                            <div class="modal-footer d-flex justify-content-center">
+                                                <button type="submit" name="submit2" value="submit" class="btn btn-deep-orange">Book Now</button>
                                             </div>
 
-                                            <div class="md-form mb-4">
-                                                <i class="fas fa-phone prefix grey-text"></i>
-                                                <input type="number" id="orangeForm-pass" class="form-control validate">
-                                                <label data-error="wrong" data-success="right"
-                                                    for="orangeForm-pass">Your phone no.</label>
-                                            </div>
-
-
-
-                                            <div class="md-form mb-5">
-                                                <i class="fas fa-people-carry prefix grey-text"></i>
-                                                <input type="number" id="orangeForm-name" class="form-control validate">
-                                                <label data-error="wrong" data-success="right"
-                                                    for="orangeForm-name">Number of People</label>
-                                            </div>
-
-
-
-                                        </div>
-
-                                        <div class="modal-footer d-flex justify-content-center">
-                                            <button class="btn btn-deep-orange">Book Now</button>
                                         </div>
 
                                     </div>
-
                                 </div>
-                            </div>
 
-
-
+                            </form>
+                        <?php } ?>
 
                         </div>
-
-
-
-
-
-
 
 
 
@@ -827,37 +704,37 @@
 
 
                         <!---NEW TABS-->
-
+                        
                         <div class="tab-pane" id="rating">
-                                <p>My rating: <input type="number" name="your_awesome_parameter" id="rating1" class="rating" data-clearable="remove"/></p>
-                            
-                            <label for="">Review</label>
-                                <input type="text" class="form-control">
+                            <?php 
+                                $sql="SELECT * from rating where name='Mt.Everest'";
+                                $result=mysqli_query($conn,$sql);
+                                foreach ($result as $key => $value) {
+                                    
+                             ?>
+                             Rating:
+                            <?php echo $value['rating']; ?><br>
+                            Review:
+                            <?php echo $value['feedback']; ?><br>
+                            <?php } ?>
+                           <form action="rating.php" method="post">
+                               My Rating:
+                               <select name="rating">
+                                   <option value="0">0</option>
+                                   <option value="1">1</option>
+                                   <option value="2">2</option>
+                                   <option value="3">3</option>
+                                   <option value="4">4</option>
+                                   <option value="5">5</option>
+                               </select>
+                               <label for="">Review</label>
+                                    <input name="review" type="text" class="form-control">
                                     
 
-                                <button class="btn btn-primary mt-2">Submit</button>
+                                <button type="submit" name="submit" value="submit" class="btn btn-primary mt-2">Submit</button>
+                           </form>
+                           
                         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -867,15 +744,21 @@
                 <div class="col-lg-4 order-lg-1 text-center">
                     <img src="../../img/profile/everest.webp" class="mx-auto img-fluid img-circle d-block" alt="avatar">
                     <br>
-                    <a  target="_blank" class="btn btn-info btn-block" href="./360 Images/navBar.html">View 360° Image</a>
+                    <a target="_blank" class="btn btn-info btn-block" href="./360Images/navBar.php">View 360° Image</a>
                 </div>
             </div>
         </div>
     </section>
-
+<?php 
+        
+    }
+}else{
+    header('Location:../login/login.php');
+}
+     ?>
 
     <div id="footer"></div>
-
+    
 
 
 
@@ -921,21 +804,15 @@
 
 
 
-$(function(){
-        $('input').on('change', function(){
-          alert("Changed: " + $(this).val())
-        });
-      });
-
         $(function () {
 
-            $("#footer").load("../../vendor/footer.html");
+            $("#footer").load("../../vendor/footer.php");
         });
 
         function myFunction() {
             var dots = document.getElementById("dots");
             var moreText = document.getElementById("more");
-            var btnText = document.getElementById("readMore");
+            var btnText = document.getElementById("myBtn");
 
             if (dots.style.display === "none") {
                 dots.style.display = "inline";

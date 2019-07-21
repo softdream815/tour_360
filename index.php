@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -61,7 +62,7 @@
         <div class="container main-menu">
             <div class="row align-items-center justify-content-between d-flex">
                 <div id="logo">
-                    <a href="index.html"><img src="img/logo1.png" alt="" title="" /></a>
+                    <a href="index.php"><img src="img/logo1.png" alt="" title="" /></a>
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
@@ -69,16 +70,22 @@
                         <li><a href="#services" class="smooth-scroll">Services</a></li>
                         <li><a href="#trending">Packages</a></li>
                         <li><a href="#custom-packages">Custom Packages</a></li>
+                        <?php 
+                            if(isset($_SESSION['login'])){
+                         ?>
+                         <li><a target="_blank" href="./vendor/login/logout.php">LogOut</a>
 
-                        <li><a target="_blank" href="./vendor/login/login.html">Login</a>
+                        </li>
+                     <?php }else{ ?>
+                        <li><a target="_blank" href="./vendor/login/login.php">Login</a>
 
                         </li>
 
 
-                        <li class="menu-has-children"><a href="./vendor/register/signup.html">Sign Up</a>
+                        <li class="menu-has-children"><a href="./vendor/register/signup.php">Sign Up</a>
 
                         </li>
-
+                    <?php } ?>
                         </li>
                         <li><a href="#contact" class="smooth-scroll">Contact</a></li>
                     </ul>
@@ -100,7 +107,7 @@
                         Nepal has even made it to Lonely Planet’s list of Top 10 countries that ‘you cannot afford to
                         miss list’. Even natural disasters can’t keep Nepal down for long.
                     </p>
-                    <a href="#services" class="primary-btn text-uppercase smooth-scroll">Explore Nepal</a>
+                    <a href="#services" class="btn btn-info btn-lg text-uppercase smooth-scroll">Explore Nepal</a>
                 </div>
 
             </div>
@@ -130,7 +137,7 @@
                                                 </div>
                                                 <!--end of col-->
                                                 <div class="col-auto">
-                                                    <a class="btn btn-block btn-dark" type="submit" id="recommendationEngine" href="./vendor/profile-page/profile.html">Search</a>
+                                                    <a class="btn btn-block btn-dark" type="submit" id="recommendationEngine" href="./vendor/profile-page/profile.php">Search</a>
                                                 </div>
                                                 <!--end of col-->
                                             </div>
@@ -197,11 +204,11 @@
 
     <script>
         $(function () {
-            $("#services").load("./vendor/services.html");
-            $("#trending").load("./vendor/trending.html");
-            $("#custom-packages").load("./vendor/custom-packages.html");
-            $("#contact").load("./vendor/contact.html");
-            $("#footer").load("./vendor/footer.html");
+            $("#services").load("./vendor/services.php");
+            $("#trending").load("./vendor/trending.php");
+            $("#custom-packages").load("./vendor/custom-packages.php");
+            $("#contact").load("./vendor/contact.php");
+            $("#footer").load("./vendor/footer.php");
         });
         
     </script>

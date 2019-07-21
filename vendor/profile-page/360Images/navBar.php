@@ -53,13 +53,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="./everest360.html" target="360view">Mt.Everest
+              <a class="nav-link" href="./everest360.php" target="360view">Mt.Everest
               </a>
             </li>
 
           </ul>
 
-          <ul class="navbar-nav ml-auto nav-flex-icons mr-5">
+          <ul class="navbar-nav ml-auto nav-flex-icons" style="margin-right : 120px;">
         
           
                 <li class="nav-item dropdown">
@@ -67,13 +67,13 @@
                           aria-haspopup="true" aria-expanded="false">Suggested
                         </a>
                         <div class="hover-drop dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-                          <a class="hover-drop dropdown-item" href="./everest360.html" target="360view">Mt Everest</a>  
-                          <a class="hover-drop dropdown-item" href="./lumbini360.html" target="360view">Lumbini</a>
-                          <a class="hover-drop dropdown-item" href="./chitwan360.html" target="360view">Chitwan National Park</a>
-                          <a class="hover-drop dropdown-item" href="./bunjee360.html" target="360view">Bunjee Jumping</a>
-                          <a class="hover-drop dropdown-item" href="./zipFly360.html" target="360view">Zip Flyer</a>
-                          <a class="hover-drop dropdown-item" href="./patanDurbar360.html" target="360view">Patan Durbar Square</a>
-                          <a class="hover-drop dropdown-item" href="./pashupati360.html" target="360view">Pashupatinath Temple</a>
+                          <a class="hover-drop dropdown-item" href="./everest360.php" target="360view">Mt Everest</a>  
+                          <a class="hover-drop dropdown-item" href="./lumbini360.php" target="360view">Lumbini</a>
+                          <a class="hover-drop dropdown-item" href="./chitwan360.php" target="360view">Chitwan National Park</a>
+                          <a class="hover-drop dropdown-item" href="./bunjee360.php" target="360view">Bunjee Jumping</a>
+                          <a class="hover-drop dropdown-item" href="./zipFly360.php" target="360view">Zip Flyer</a>
+                          <a class="hover-drop dropdown-item" href="./patanDurbar360.php" target="360view">Patan Durbar Square</a>
+                          <a class="hover-drop dropdown-item" href="./pashupati360.php" target="360view">Pashupatinath Temple</a>
                         </div>
                       </li>
           </ul>
@@ -142,7 +142,7 @@
                    
                 </div>
      </nav> -->
-     <iframe src="everest360.html" frameborder="0" style="height:100vh;width:100%;" name="360view"></iframe>
+     <iframe src="everest360.php" frameborder="0" style="height:100vh;width:100%;" name="360view"></iframe>
 
 
        

@@ -15,7 +15,7 @@
                         <div class="col-md-8">
     
                             <!-- Description -->
-                            <p class="grey-text">360  Tour is a Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur ut inventore voluptatum in explicabo debitis soluta, maiores consectetur! Laboriosam, possimus?</p>
+                            <p class="grey-text">360 degree view of all places in Nepal! Nepal, official name, Federal Democratic Republic of Nepal, is a landlocked country in South Asia. It is located mainly in the Himalayas, but also includes parts of the Indo-Gangetic Plain. With an estimated population of 26.4 million, it is 48th largest country by population and 93rd largest country by area.</p>
     
                         </div>
                         <!--Grid column-->
@@ -30,7 +30,7 @@
                             <div class="media block-6 services d-block text-center">
                                 <div class="d-flex justify-content-center">
                                     <div class="icon d-flex justify-content-center mb-3"><span
-                                            class="align-self-center fas fa-globe-europe fa-5x  orange-text "></span></div>
+                                            class="align-self-center fas fa-globe-europe fa-5x  text-info "></span></div>
                                 </div>
                                 <div class="media-body p-2">
                                         <h4 class="font-weight-bold">Travel Arrangements</h4>
@@ -47,7 +47,7 @@
                             <div class="media block-6 services d-block text-center justify-content">
                                 <div class="d-flex justify-content-center">
                                     <div class="icon d-flex justify-content-center mb-3"><span
-                                            class="align-self-center fas fa-street-view fa-5x  orange-text "></span></div>
+                                            class="align-self-center fas fa-street-view fa-5x  text-info "></span></div>
                                 </div>
                                 <div class="media-body p-2">
                                         <h4 class="font-weight-bold">Local Guides</h4>
@@ -63,7 +63,7 @@
                             <div class="media block-6 services d-block text-center">
                                 <div class="d-flex justify-content-center">
                                     <div class="icon d-flex justify-content-center mb-3"><span
-                                            class="align-self-center fas fa-hotel fa-4x  orange-text "></span></div>
+                                            class="align-self-center fas fa-hotel fa-4x  text-info "></span></div>
                                 </div>
                                 <div class="media-body p-2">
                                         <h4 class="font-weight-bold">Hotels and Home Stays</h4>
@@ -81,7 +81,7 @@
                                                 <div class="media block-6 services d-block text-center">
                                                     <div class="d-flex justify-content-center">
                                                         <div class="icon d-flex justify-content-center mb-3"><span
-                                                                class="align-self-center fas fa-biking fa-4x  orange-text "></span></div>
+                                                                class="align-self-center fas fa-biking fa-4x  text-info "></span></div>
                                                     </div>
                                                     <div class="media-body p-2">
                                                             <h4 class="font-weight-bold">Adventures</h4>

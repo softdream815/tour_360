@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Login</title>
+    <title>Guide Signup</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="icon" type="image/png" href="../img/favicon.ico" />
@@ -34,7 +34,9 @@
 
 <body>
 
+
     <div id="header"></div>
+
 
 
     <section class="p-5">
@@ -46,46 +48,57 @@
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-header bg-warning text-white">
-                            <h2>Login Form</h2>
-
+                            <h2>Guide Signup Form</h2>
+                            
                         </div>
-                        <form>
+                        <form action="upload.php" method="post" enctype="multipart/form-data">
                             <div class="card-body">
                                 <div class="form-group">
-
-                                    <!-- Subject -->
-                                    <label>Type of login : </label>
-                                    <select class="browser-default custom-select mb-4">
-                                        <option value="" disabled>Choose option</option>
-                                        <option value="user">User</option>
-                                        <option value="guide">Hotel</option>
-                                        <option value="hotel">Guide</option>
-
-                                    </select>
+                                    <input name="name" type="text" id="name" class="form-control mb-4" placeholder="Name">
                                 </div>
 
 
                                 <div class="form-group">
-
-
-                                    <!-- Email -->
-                                    <input type="email" id="email" class="form-control mb-4" placeholder="Email">
-
+                                    <input name="address" type="text" id="address" class="form-control mb-4" placeholder="Address">
                                 </div>
 
                                 <div class="form-group">
+                                    <input name="skill" type="text" id="skill" class="form-control mb-4" placeholder="Skills">
+                                </div>
 
 
-                                    <input type="password" id="password" class="form-control mb-4"
+                                <div class="form-group">
+                                    <input name="experience" type="text" id="experience" class="form-control mb-4"
+                                        placeholder="Experience">
+                                </div>
+
+
+                                <div class="form-group">
+                                    <input name="email" type="email" id="email" class="form-control mb-4" placeholder="Email">
+                                </div>
+
+
+
+
+                                <div class="form-group">
+                                    <input name="phone" type="number" id="phone" class="form-control mb-4" placeholder="Phone..">
+                                </div>
+
+
+                                <div class="form-group">
+                                    <input name="pass" type="password" id="password" class="form-control mb-4"
                                         placeholder="Password">
+                                </div>
 
-
+                                <div class="form-group text-left">
+                                    <label for="photo">Upload photo</label>
+                                    <input name="photo" type="file" class="form-control-file" id="photo">
                                 </div>
 
                             </div>
-
+                            <input type="hidden" name="mode" value="guide">
                             <div class="card-footer">
-                                <button class="btn btn-warning btn-block">Sign Up</button>
+                                <button name="submit" value="submit" class="btn btn-warning btn-block">Sign Up</button>
 
                             </div>
                         </form>
@@ -101,14 +114,7 @@
     </section>
 
 
-
-
     <div id="footer"></div>
-
-
-
-
-
 
 
 
