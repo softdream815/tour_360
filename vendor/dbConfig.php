@@ -1,7 +1,7 @@
 <?php 
 $Servername="localhost";
-	$dbUsername="newuser";
-	$dbpassword="password";
+	$dbUsername="root";
+	$dbpassword="";
 	$dbName="projecteverest";
 	$conn = mysqli_connect($Servername,$dbUsername,$dbpassword,$dbName);
 
