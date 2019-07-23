@@ -7,30 +7,28 @@
     <title>Hotel Signup</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" type="image/png" href="../../img/favicon.ico" />
+    <link rel="icon" type="image/png" href="../img/favicon.ico" />
 
- <!--Normalise CSS-->
- <link rel="stylesheet" type="text/css" href="../libs/normalize.css">
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
-<!-- Font awesome 5.9-->
-<link rel="stylesheet" href="../../libs/fontawesome/css/all.css">
+    <!--Normalise CSS-->
+    <link rel="stylesheet" type="text/css" href="../libs/normalize.css">
 
-<!--Bootstrap-->
-<link rel="stylesheet" href="../../libs/bootstrap.min.css">
+    <!-- Font awesome 5.9-->
+    <link rel="stylesheet" href="../libs/fontawesome/css/all.css">
 
-<!--Material Design for Bootstrap -->
-<link rel="stylesheet" href="../../libs/mdb.min.css">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="../libs/bootstrap.min.css">
 
-<!--Style css-->
-<link rel="stylesheet" type="text/css" media="screen" href="../../css/style.css">
+    <!--Material Design for Bootstrap -->
+    <link rel="stylesheet" href="../libs/mdb.min.css">
 
-<!--Media Query -->
-<link rel="stylesheet" type="text/css" href="../../css/responsive.css">
+    <!--Style css-->
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css">
 
-
-
-
-
+    <!--Media Query -->
+    <link rel="stylesheet" type="text/css" href="../css/responsive.css">
 
 </head>
 
@@ -50,7 +48,7 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header bg-info text-white">
+                        <div class="card-header bg-warning text-white">
                             <h2>Hotel Signup Form</h2>
                         </div>
                         <form action="upload.php" method="post" enctype="multipart/form-data">
@@ -112,17 +110,11 @@
                             </div>
                             <input type="hidden" name="mode" value="hotel">
                             <div class="card-footer">
-                                <button name="submit" value="submit" class="btn btn-info btn-block">Sign Up</button>
+                                <button name="submit" value="submit" class="btn btn-warning btn-block">Sign Up</button>
 
                             </div>
                         </form>
 
-
-
-                        <div class="text-center mb-2">
-                            Already have an account ? <br>
-                           <a href="../login/login.php"> Click here to Sign In</a>
-                           </div>
                     </div>
 
                 </div>
@@ -139,27 +131,29 @@
 
 
 
+
+
     <!--Jquery JS-->
-    <script src="../../libs/jquery-3.4.1.min.js"></script>
+    <script src="../libs/jquery-3.3.1.min.js"></script>
 
     <!--Bootstrap JS-->
-    <script src="../../libs/bootstrap.min.js"></script>
+    <script src="../libs/bootstrap.min.js"></script>
 
 
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="../../libs/mdb.min.css"></script>
+    <script type="text/javascript" src="../libs/mdb.min.css"></script>
 
     <!--Popper JS-->
-    <script src=".../../libs/popper.min.js"></script>
+    <script src=".../libs/popper.min.js"></script>
 
 
     <!--Custom JS -->
-    <script src="../../js/custom.js"></script>
+    <script src="../js/custom.js"></script>
 
     <script>
         $(function () {
-            $("#header").load("./navbar.php");
-            $("#footer").load("../footer.php");
+            $("#header").load("./navbar.html");
+            $("#footer").load("../footer.html");
         });
     </script>
 
